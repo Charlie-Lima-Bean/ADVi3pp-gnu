@@ -971,8 +971,12 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 200
-#define Y_BED_SIZE 200
+// #define X_BED_SIZE 200
+// #define Y_BED_SIZE 200
+
+#define X_BED_SIZE 180 // account for BLTouch offset :(
+#define Y_BED_SIZE 190 // account for larger bearings :(
+
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 // @advi3++: The bed dimensions of Wanhao i3 Plus is (officially) 200x200x180

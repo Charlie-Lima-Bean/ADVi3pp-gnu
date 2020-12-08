@@ -80,17 +80,17 @@ namespace
     const FlashChar* get_sensor_name(size_t index)
     {
         // Note: F macro can be used only in a function, this is why this is coded like this
-        auto teaching_tech_side  = F("Teaching Tech L. Side");
+        auto plus_plus_probe     = F("plus plus probe");
         auto custom              = F("Custom");
 
 #if defined(ADVi3PP_MARK2)
         auto mark2               = F("Mark II");
         static const FlashChar* names[advi3pp::SensorSettings::NB_SENSOR_POSITIONS] =
-          {mark2, teaching_tech_side, custom};
+          {mark2, plus_plus_probe, custom};
 #elif defined(ADVi3PP_BLTOUCH)
         auto baseggio            = F("Indianagio Front");
         static const FlashChar* names[advi3pp::SensorSettings::NB_SENSOR_POSITIONS] =
-          {baseggio, teaching_tech_side, custom};
+          {baseggio, plus_plus_probe, custom};
 #endif
         assert(index < advi3pp::SensorSettings::NB_SENSOR_POSITIONS);
         return names[index];
@@ -101,11 +101,11 @@ namespace
     {
 #if defined(ADVi3PP_MARK2)
         {     0,  6000 },    // Mark II
-        { -2400, -3800 },    // Teaching Tech L. Side
+        { -3200, -4500 },    // plus plus probe mount
         {     0,     0 }     // Custom
 #elif defined(ADVi3PP_BLTOUCH)
         {  +150, -4270 },    // Baseggio/Indianagio Front
-        { -2400, -3800 },    // Teaching Tech L. Side
+        { -3200, -4500 },    // plus plus probe mount
         {     0,     0 }     // Custom
 #endif
     };
